@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText height, weight;
-    TextView  numericresult, textresult, description;
-    Button calculate;
+    EditText mHeight, mWeight;
+    TextView mNumbericResult, mTextResult, mDescription;
+    Button mCalculate;
 
 
 
@@ -20,15 +20,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        height = (EditText) findViewById(R.id.height);
-        weight = (EditText) findViewById(R.id.weight);
-        numericresult = (TextView) findViewById(R.id.numericresult);
-        textresult = (TextView) findViewById(R.id.textresult);
-        description = (TextView) findViewById(R.id.description);
-        calculate = (Button) findViewById(R.id.calculate);
+        mHeight = (EditText) findViewById(R.id.height);
+        mWeight = (EditText) findViewById(R.id.weight);
+        mNumbericResult = (TextView) findViewById(R.id.numeric_result);
+        mTextResult = (TextView) findViewById(R.id.text_result);
+        mDescription = (TextView) findViewById(R.id.description);
+        mCalculate = (Button) findViewById(R.id.calculate);
 
-
-        calculate.setOnClickListener(new View.OnClickListener() {
+        mCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 calculateBMI();
@@ -37,50 +36,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calculateBMI(){
-        String heightStr = height.getText() .toString();
-        String weightStr = weight.getText() .toString();
+        String heightStr = mHeight.getText().toString();
+        String weightStr = mWeight.getText().toString();
 
-        if (heightStr != null && !"" .equals(heightStr) && weightStr != null && !"" .equals(weightStr)){
+        if (heightStr.length() > 0 && weightStr.length() > 0) {
             float heightValue = Float.parseFloat(heightStr);
             float weightValue = Float.parseFloat(weightStr);
-
-            float BMI = weightValue/ (heightValue*heightValue);
-
-            displayBMI(BMI);
+            float bmi = weightValue/(heightValue*heightValue);
+            displayBmi(bmi);
         }
-
-
     }
 
-    private void displayBMI(float BMI) {
-        String bmiLabel = "";
-        String bmiLabel2 = "";
-        String bmiLabel3 = "";
+    private void displayBmi(float bmi) {
+        String bmiLabel2;
+        String bmiLabel3;
 
-        if (Float.compare(BMI, 18.5f)<= 0 ){
-            bmiLabel2 = "Underweight";
-            bmiLabel3 = "Very severly underweight!";
-        } else if (Float.compare(BMI, 18.5f)> 0 && Float.compare(BMI, 25f)<= 0){
-            bmiLabel2= "Healthy";
-            bmiLabel3= "Your BMI is normal range!";
-        } else if (Float.compare(BMI, 25f)> 0 && Float.compare(BMI, 30f)<=0){
-            bmiLabel2= "Overweight";
-            bmiLabel3= "Your BMI is high!";
-        }else if (Float.compare(BMI, 30f)> 0 && Float.compare(BMI, 40f)<=0){
-            bmiLabel2= "Obese clase 1";
-            bmiLabel3= "Your BMI is high!";
+        if (Float.compare(bmi, 18.5f) <= 0 ) {
+            bmiLabel2 = getString(R.string.underweight);
+            bmiLabel3 = getString(R.string.underweight_message);
+        } else if (Float.compare(bmi, 18.5f)  > 0 && Float.compare(bmi, 25f)<= 0)  {
+            bmiLabel2= getString(R.string.healthy);
+            bmiLabel3= getString(R.string.healthy_message);
+        } else if (Float.compare(bmi, 25f) > 0 && Float.compare(bmi, 30f) <= 0){
+            bmiLabel2= getString(R.string.overweight);
+            bmiLabel3= getString(R.string.overweight_message);
+        } else if (Float.compare(bmi, 30f) > 0 && Float.compare(bmi, 40f) <= 0) {
+            bmiLabel2= getString(R.string.obese);
+            bmiLabel3= getString(R.string.obese_message);
         } else {
-            bmiLabel2= "Obese clase 2";
-            bmiLabel3= "Your BMI is to high!";
-
+            bmiLabel2= getString(R.string.obese_class_2);
+            bmiLabel3= getString(R.string.obese_2_message);
         }
-          bmiLabel= BMI+"\n"+ bmiLabel;
-        numericresult.setText(bmiLabel);
-        textresult.setText(bmiLabel2);
-        description.setText(bmiLabel3);
-
-
+        mNumbericResult.setText(String.valueOf(bmi));
+        mTextResult.setText(bmiLabel2);
+        mDescription.setText(bmiLabel3);
     }
-
-
 }

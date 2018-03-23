@@ -3,4 +3,16 @@
     <string name="calculate">CALCULATE</string>
     <string name="weightvalue">kilograms</string>
     <string name="heightvalue">meters</string>
+    <string name="underweight">Underweight</string>
+    <string name="underweight_message">Very severly underweight!</string>
+    <string name="healthy">Healthy</string>
+    <string name="healthy_message">Your BMI is normal range!</string>
+    <string name="overweight">Overweight</string>
+    <string name="overweight_message">Your BMI is high!</string>
+    <string name="obese">Obese clase 1</string>
+    <string name="obese_message">Your BMI is high!</string>
+    <string name="obese_class_2">Obese clase 2</string>
+    <string name="obese_2_message">Your BMI is to high!</string>
+    <string name="enter_weight_in_kg">Enter your weight in kilograms</string>
+    <string name="enter_height_in_meters">Enter your height in meters</string>
 </resources>

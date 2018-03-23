@@ -1,94 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kompy.bmicalculator.MainActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
-        android:background="@color/backgroundcolor"
-        android:orientation="vertical"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-5dp">
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    android:padding="10dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:layout_editor_absoluteX="-5dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
-            android:text="Enter your height in meters"
-            android:textColor="@color/textcolor"
-            android:textSize="20dp" />
+            android:text="@string/enter_height_in_meters"
+            android:textColor="@color/text_color"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/height"
             android:layout_width="103dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_gravity="center"
             android:ems="10"
             android:gravity="center_horizontal"
             android:hint="@string/heightvalue"
             android:inputType="number|numberDecimal"
             android:text=""
-            android:textColor="@color/textcolor" />
+            android:textColor="@color/text_color" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Enter your weight in kilograms"
-            android:textColor="@color/textcolor"
-            android:textSize="20dp" />
+            android:text="@string/enter_weight_in_kg"
+            android:textColor="@color/text_color"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/weight"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_gravity="center"
             android:ems="10"
             android:gravity="center"
             android:hint="@string/weightvalue"
             android:inputType="number|numberDecimal"
             android:text=""
-            android:textColor="@color/textcolor" />
+            android:textColor="@color/text_color" />
 
         <Button
             android:id="@+id/calculate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/butonbackgrondcolor"
+            android:background="@color/button_backgrond_color"
             android:text="@string/calculate"
-            android:textColor="@color/textcolor" />
+            android:textColor="@color/text_color" />
 
         <TextView
-            android:id="@+id/numericresult"
+            android:id="@+id/numeric_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:ems="10"
             android:gravity="center"
-            android:inputType="number|numberDecimal"
             android:text=""
-            android:textColor="@color/textcolor"
-            android:textSize="24dp" />
+            android:textColor="@color/text_color"
+            android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textresult"
+            android:id="@+id/text_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
             android:gravity="center"
-            android:inputType="text"
             android:text=""
-            android:textColor="@color/textcolor"
-            android:textSize="24dp"
+            android:textColor="@color/text_color"
+            android:textSize="24sp"
             tools:layout_editor_absoluteX="23dp"
             tools:layout_editor_absoluteY="298dp" />
 
@@ -99,14 +91,10 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:gravity="center"
-            android:inputType="text"
             android:text=""
-            android:textColor="@color/textcolor"
-            android:textSize="24dp"
+            android:textColor="@color/text_color"
+            android:textSize="24sp"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="346dp" />
 
-    </LinearLayout>
-
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
